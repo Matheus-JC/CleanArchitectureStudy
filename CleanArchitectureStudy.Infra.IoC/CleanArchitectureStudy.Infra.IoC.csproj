@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitectureStudy.Application\CleanArchitectureStudy.Application.csproj" />
+    <ProjectReference Include="..\CleanArchitectureStudy.Domain\CleanArchitectureStudy.Domain.csproj" />
+    <ProjectReference Include="..\CleanArchitectureStudy.Infra.Data\CleanArchitectureStudy.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
