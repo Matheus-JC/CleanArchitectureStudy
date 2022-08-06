@@ -9,8 +9,8 @@ namespace CleanArchitectureStudy.Application.Services
 {
     public class ProductService : IProductService
     {
-        private IMapper _mapper;
-        private IMediator _mediator;
+        private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
         public ProductService(IMapper mapper, IMediator mediator)
         {
@@ -34,6 +34,11 @@ namespace CleanArchitectureStudy.Application.Services
 
         public async Task<ProductDTO> GetById(int? id)
         {
+            if (id == null)
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+
             var productByIdQuery = new GetProductByIdQuery(id.Value);
 
             if(productByIdQuery == null)
@@ -60,6 +65,11 @@ namespace CleanArchitectureStudy.Application.Services
 
         public async Task Remove(int? id)
         {
+            if(id == null)
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+
             var productRemoveCommand = new ProductRemoveCommand(id.Value);
 
             if(productRemoveCommand == null)

@@ -13,13 +13,13 @@ namespace CleanArchitectureStudy.Application.DTOs
         [MinLength(5)]
         [MaxLength(200)]
         [DisplayName("Name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required(ErrorMessage = "The Description is Required")]
         [MinLength(5)]
         [MaxLength(200)]
         [DisplayName("Description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Required(ErrorMessage = "The Price is Required")]
         [Column(TypeName = "decimal(18,2)")]

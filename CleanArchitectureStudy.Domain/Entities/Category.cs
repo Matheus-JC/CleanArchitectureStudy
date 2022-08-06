@@ -4,9 +4,9 @@ namespace CleanArchitectureStudy.Domain.Entities
 {
     public sealed class Category : Entity
     {
-        public string Name { get; private set; }
+        public string? Name { get; private set; }
 
-        public ICollection<Product> Products { get; private set; }
+        public ICollection<Product>? Products { get; private set; }
 
         public Category(string name)
         {
