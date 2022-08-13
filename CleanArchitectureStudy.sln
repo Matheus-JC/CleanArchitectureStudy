@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitectureStudy.WebU
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitectureStudy.Domain.Tests", "CleanArchitectureStudy.Tests\CleanArchitectureStudy.Domain.Tests.csproj", "{3D538041-49B8-4E13-9110-2E461213CA60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureStudy.API", "CleanArchitectureStudy.API\CleanArchitectureStudy.API.csproj", "{BFCE9C9C-E0BD-4866-9641-30268A2E2FC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3D538041-49B8-4E13-9110-2E461213CA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D538041-49B8-4E13-9110-2E461213CA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D538041-49B8-4E13-9110-2E461213CA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFCE9C9C-E0BD-4866-9641-30268A2E2FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFCE9C9C-E0BD-4866-9641-30268A2E2FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFCE9C9C-E0BD-4866-9641-30268A2E2FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFCE9C9C-E0BD-4866-9641-30268A2E2FC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

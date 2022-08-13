@@ -9,6 +9,10 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspnetCore.Authentication.JwtBearer" Version="6.0.8" />
+    <PackageReference Include="Swashbuckle.AspnetCore.Swagger" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspnetCore.SwaggerGen" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspnetCore.SwaggerUI" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
