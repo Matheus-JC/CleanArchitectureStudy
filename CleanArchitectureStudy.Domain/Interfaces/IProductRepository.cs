@@ -1,13 +1,12 @@
 ﻿using CleanArchitectureStudy.Domain.Entities;
 
-namespace CleanArchitectureStudy.Domain.Interfaces
+namespace CleanArchitectureStudy.Domain.Interfaces;
+
+public interface IProductRepository
 {
-    public interface IProductRepository
-    {
-        Task<IEnumerable<Product>> GetProductsAsync();
-        Task<Product> GetByIdAsync(int? id);
-        Task<Product> CreateAsync(Product product);
-        Task<Product> UpdateAsync(Product product);
-        Task<Product> RemoveAsync(Product product);
-    }
+    Task<IEnumerable<Product>> GetProductsAsync();
+    Task<Product> GetByIdAsync(int? id);
+    Task<Product> CreateAsync(Product product);
+    Task<Product> UpdateAsync(Product product);
+    Task<Product> RemoveAsync(Product product);
 }

@@ -1,16 +1,15 @@
-﻿namespace CleanArchitectureStudy.Domain.Validations
-{
-    public class DomainExceptionValidation : Exception
-    {
-        public DomainExceptionValidation(string error) : base(error)
-        { }
+﻿namespace CleanArchitectureStudy.Domain.Validations;
 
-        public static void When(bool hasError, string error)
+public class DomainExceptionValidation : Exception
+{
+    public DomainExceptionValidation(string error) : base(error)
+    { }
+
+    public static void When(bool hasError, string error)
+    {
+        if (hasError)
         {
-            if (hasError)
-            {
-                throw new DomainExceptionValidation(error);
-            }
+            throw new DomainExceptionValidation(error);
         }
     }
 }

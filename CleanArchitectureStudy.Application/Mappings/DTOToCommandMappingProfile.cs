@@ -2,14 +2,13 @@
 using CleanArchitectureStudy.Application.DTOs;
 using CleanArchitectureStudy.Application.Products.Commands;
 
-namespace CleanArchitectureStudy.Application.Mappings
+namespace CleanArchitectureStudy.Application.Mappings;
+
+public class DTOToCommandMappingProfile : Profile
 {
-    public class DTOToCommandMappingProfile : Profile
+    public DTOToCommandMappingProfile()
     {
-        public DTOToCommandMappingProfile()
-        {
-            CreateMap<ProductDTO, ProductCreateCommand>();
-            CreateMap<ProductDTO, ProductUpdateCommand>();
-        }
+        CreateMap<ProductDTO, ProductCreateCommand>();
+        CreateMap<ProductDTO, ProductUpdateCommand>();
     }
 }

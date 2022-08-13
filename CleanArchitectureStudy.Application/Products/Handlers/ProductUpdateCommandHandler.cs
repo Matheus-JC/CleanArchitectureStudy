@@ -3,39 +3,38 @@ using CleanArchitectureStudy.Domain.Entities;
 using CleanArchitectureStudy.Domain.Interfaces;
 using MediatR;
 
-namespace CleanArchitectureStudy.Application.Products.Handlers
+namespace CleanArchitectureStudy.Application.Products.Handlers;
+
+public class ProductUpdateCommandHandler : IRequestHandler<ProductUpdateCommand, Product>
 {
-    public class ProductUpdateCommandHandler : IRequestHandler<ProductUpdateCommand, Product>
+    private readonly IProductRepository _productRepository;
+
+    public ProductUpdateCommandHandler(IProductRepository productRepository)
     {
-        private readonly IProductRepository _productRepository;
+        _productRepository = productRepository ??
+            throw new ArgumentNullException(nameof(productRepository));
+    }
 
-        public ProductUpdateCommandHandler(IProductRepository productRepository)
+    public async Task<Product> Handle(ProductUpdateCommand request, CancellationToken cancellationToken)
+    {
+        var product = await _productRepository.GetByIdAsync(request.Id);
+
+        if (product == null)
         {
-            _productRepository = productRepository ??
-                throw new ArgumentNullException(nameof(productRepository));
+            throw new ApplicationException($"Entity could not be found");
         }
-
-        public async Task<Product> Handle(ProductUpdateCommand request, CancellationToken cancellationToken)
+        else
         {
-            var product = await _productRepository.GetByIdAsync(request.Id);
+            product.Update(
+                request.Name,
+                request.Description,
+                request.Price,
+                request.Stock,
+                request.Image,
+                request.CategoryId
+            );
 
-            if (product == null)
-            {
-                throw new ApplicationException($"Entity could not be found");
-            }
-            else
-            {
-                product.Update(
-                    request.Name,
-                    request.Description,
-                    request.Price,
-                    request.Stock,
-                    request.Image,
-                    request.CategoryId
-                );
-
-                return await _productRepository.UpdateAsync(product);
-            }
+            return await _productRepository.UpdateAsync(product);
         }
     }
 }

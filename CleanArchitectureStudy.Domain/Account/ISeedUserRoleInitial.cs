@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CleanArchitectureStudy.Domain.Account;
 
-namespace CleanArchitectureStudy.Domain.Account
+public interface ISeedUserRoleInitial
 {
-    public interface ISeedUserRoleInitial
-    {
-        void SeedUsers();
-        void SeedRoles();
-    }
+    void SeedUsers();
+    void SeedRoles();
 }

@@ -1,7 +1,6 @@
-﻿namespace CleanArchitectureStudy.Application.Products.Commands
-{
-    public class ProductCreateCommand : ProductCommand
-    {
+﻿namespace CleanArchitectureStudy.Application.Products.Commands;
 
-    }
+public class ProductCreateCommand : ProductCommand
+{
+
 }
